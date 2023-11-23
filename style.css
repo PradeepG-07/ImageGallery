@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    scroll-behavior: smooth;
+    background-color: rgb(113, 108, 108);
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    z-index: 9999;
+}
+.box{
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    width: 95%;
+    border: 1px solid rgb(213, 193, 193);
+    margin: 15px auto;
+}
+nav .logo{
+    padding: 10px;
+}
+main{
+    padding: 20px 10px;
+}
+main .content{
+    min-height: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+main .content .buttons{
+    height: 100px;
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .content .titles{
+    position: relative;
+    
+}
+
+main .content input{
+    color: transparent;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    visibility: none;
+}
+input::file-selector-button {
+    display: none;
+}
+
+.titles ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+main .content .button{
+    
+    width: 200px;
+    height: 90px;
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:25px;
+    background-color: #04AA6D;
+    z-index: 3;
+    cursor: pointer;
+}
+main .content:has(input:hover) .button{
+    background-color: #059862;
+   
+}
+
+.imageslider{
+    margin-top: 20px;
+}
+
+.imagebox{
+    width: 98%;
+    margin: auto;
+    min-height: 160px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.imagebox img{
+    width: 100%;
+    margin: 10px auto;
+    object-fit: fill;
+    border: 1px solid black;
+    object-position: top;
+    transition: all .3s;
+}
+
+.slidercontrols{
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 25px ;
+}
+.slidercontrols button{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    box-shadow: rgba(159, 159, 159, 0.2) 0px 0px 0px 2px;
+    transition: scale .3s;
+}
+.slidercontrols button:hover{
+    background-color: antiquewhite;
+    scale: 1.1;
+}
+.sliderarrow{
+    font-size: 40px !important;
+}
+
+.imagenumbers{
+    width: 70%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    
+}
+
+.titles ul li{
+    font-size: 25px;
+    padding: 5px;
+    list-style: none;
+}
+
+.imagenumbers li{
+    list-style: none;
+    font-size: 25px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.numberactive{
+    background-color: orange;
+    
+}
+
+@media screen and (width>=545px) and (width<=768px)  {
+    .imagebox img{
+       
+        aspect-ratio: 2;
+    }
+    .slidercontrols{
+        width: 74%;
+    }
+}
+
+@media screen and (width>=768px) {
+    .imagebox img{
+        width: 60%;
+        aspect-ratio: 2;
+    }
+    .slidercontrols{
+        width: 50%;
+    }
+    nav{
+        position: static;
+    }
+}
+@media screen and (width<545px) {
+    .imagebox img{
+       height: 75vh;
+    }
+    .titles ul li{
+        font-size: 16px;
+    }
+   
+}
+
+.d-active{
+    display: block !important;
+}
+.d-none{
+    display: none !important;
+}
